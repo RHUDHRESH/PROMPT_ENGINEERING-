@@ -1,3 +1,5 @@
+> **Not run - paste ChatGPT answers here.**
+
 # ChatGPT outputs
 Model/version used: _______   Date: _______
 

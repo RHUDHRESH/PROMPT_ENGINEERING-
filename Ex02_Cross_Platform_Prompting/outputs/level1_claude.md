@@ -1,0 +1,3 @@
+# Level 1 (Basic) - Claude output
+
+Transformers, introduced in 2017 in the paper "Attention Is All You Need", replaced recurrent networks as the leading architecture for sequence modelling. Their self-attention mechanism relates every token to every other token in parallel, which speeds up GPU training and captures long-range dependencies. Scaling them on large text corpora produced Large Language Models such as GPT, Claude and Gemini, which are pre-trained to predict the next token and then fine-tuned with human feedback to follow instructions. They can hallucinate, are costly to train and run, and inherit data biases. Research now targets efficiency, retrieval-augmented generation, longer context windows and more reliable reasoning.

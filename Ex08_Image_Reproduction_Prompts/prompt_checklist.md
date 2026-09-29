@@ -1,0 +1,15 @@
+# Prompt-writing checklist (image reproduction)
+- [ ] Subject: one clear main subject in the first words
+- [ ] Secondary objects and their positions (left/right/foreground/background)
+- [ ] Colours: name 3-5 dominant colours, and where they appear
+- [ ] Lighting: source direction, time of day, quality (soft/hard), mood
+- [ ] Composition: framing, horizon height, leading lines, depth layers
+- [ ] Camera: angle, lens (wide/telephoto), depth of field, aspect ratio
+- [ ] Style/medium: photo, oil painting, 3D render, anime, etc.
+- [ ] Texture and detail level
+- [ ] Negative constraints (where supported): text, watermark, blur, extra objects
+- [ ] Order: most important words first (many models weight early words more)
+- [ ] Change ONE group of details per iteration; log it
+- [ ] Keep seed/settings fixed when comparing versions (if supported)
+- [ ] Compare against the reference on the same 8 aspects as `analysis.md`
+- [ ] Stop when remaining differences are random variation, not missing instructions
