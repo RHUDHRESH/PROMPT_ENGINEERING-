@@ -21,3 +21,5 @@ One folder per experiment. Each has a `README.md` with the aim, procedure and fi
 2. Paste raw outputs into `outputs/` (or add images/videos).
 3. Fill in `evaluation.md` / the report files.
 4. Push the folder (or copy it to the matching `RaajaThilahar/Ex.No.N` submission repo).
+
+Each folder has a `LAB_RECORD.md` (aim, procedure, result, conclusion). `RUN_SHEET.md` lists the Ex01-Ex04 prompts to paste into other AI tools.
