@@ -28,7 +28,7 @@ Say: Each version fixed one failure: generic advice, then verbosity, then safety
 
 ## Slide 7 - Evaluation (1:30)
 On slide: 30 scenarios in three groups; 10 answered; validator pass; caveat banner.
-Say: I wrote 30 scenarios with conservative expected answers based on generic FAO-style agronomy. I answered ten myself as the model; all ten matched my key and passed the schema validator. I was both author and grader, so this shows the design works, not that we hit 90%. Next step: an agronomist grades all 30 against a live model.
+Say: I wrote 30 scenarios with conservative expected answers based on generic FAO-style agronomy. I answered all 30 myself as the model; all 30 matched my key and passed the schema validator. I was both author and grader, so this shows the design works, not that we hit 90%. Next step: an agronomist grades all 30 against a live model.
 
 ## Slide 8 - Demo (1:30)
 On slide: screenshot placeholders for three cases.

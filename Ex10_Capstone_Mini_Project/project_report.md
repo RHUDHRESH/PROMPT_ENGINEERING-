@@ -1,7 +1,7 @@
 # Smart Agriculture Advisor - Project Report
 
 ## 1. Abstract
-Smallholder farmers often lack timely, local agronomic advice because extension officers are scarce. This project designs a prompt-engineered large language model (LLM) assistant, "AgriAdvisor", that turns structured farm data (crop, growth stage, soil moisture, forecast, soil test, budget, language) into a safe, prioritised action plan in a fixed JSON format. The work covers problem definition, a reusable prompt repository (system prompt plus irrigation, pest diagnosis and fertiliser task prompts), an iteration log, a 30-scenario test set with conservative expected answers, ten model replies written and self-evaluated by Claude, a small Python validator for the JSON schema, and an ethics analysis. **Important limitation:** no deployed system, user study, latency measurement or independent grading was performed. The reported results are self-evaluation on a sample of the scenarios and must not be read as measured performance.
+Smallholder farmers often lack timely, local agronomic advice because extension officers are scarce. This project designs a prompt-engineered large language model (LLM) assistant, "AgriAdvisor", that turns structured farm data (crop, growth stage, soil moisture, forecast, soil test, budget, language) into a safe, prioritised action plan in a fixed JSON format. The work covers problem definition, a reusable prompt repository (system prompt plus irrigation, pest diagnosis and fertiliser task prompts), an iteration log, a 30-scenario test set with conservative expected answers, thirty model replies written and self-evaluated by Claude, a small Python validator for the JSON schema, and an ethics analysis. **Important limitation:** no deployed system, user study, latency measurement or independent grading was performed. The reported results are self-evaluation of Claude's own replies against a key Claude also wrote and must not be read as measured performance.
 
 ## 2. Problem Statement
 Generic chatbot answers ignore soil, crop stage, weather and budget, and can suggest unsafe chemical use. The goal is an advisor that (a) uses only the data supplied, (b) asks clarifying questions when critical data is missing, (c) prefers low-cost, low-chemical options, (d) states confidence and assumptions, and (e) never exceeds label doses or recommends banned products. Users are farmers with 1-5 ha and extension officers. Target metrics, defined in `01_problem_statement.md`: at least 90% factual correctness on 30 test cases, zero unsafe pesticide doses, and response time under 10 seconds. Out of scope: legal and financial advice, and banned chemicals.
@@ -24,11 +24,11 @@ Five versions were logged (`03_prompt_iteration.md`): v1 a bare request ("Give f
 ## 5. AI Output Evaluation
 `04_output_evaluation.md` holds 30 scenarios: 10 irrigation, 10 fertiliser and 10 pest, disease and safety cases (including missing data, an out-of-scope request, a Hindi-language request, a request to double a pesticide dose, and a request for a banned product). Expected answers are deliberately conservative and follow generic, widely taught agronomy: irrigate at dawn for dry flowering tomato; skip irrigation before forecast rain; split nitrogen applications; lime acid soil according to a lab recommendation; delay urea before heavy rain; legumes need little nitrogen; scout and use integrated pest management first. The reference basis is named generically (FAO irrigation, plant nutrition and IPM guidance), and local extension advice always overrides.
 
-Ten scenarios (1, 2, 8, 12, 14, 21, 26, 27, 28, 30) were answered by Claude in `prompt_repository/sample_outputs.md`. Results, all **Claude self-evaluated**:
-- All ten replies matched the expected answer in the author's own judgement.
-- No unsafe dose advice appeared in the ten replies; two safety scenarios (27, 28) were refused with safer alternatives.
-- All ten replies passed the schema validator (a unittest confirms this).
-- Twenty scenarios were not run; latency was not measured.
+All 30 scenarios were answered by Claude: 10 in `prompt_repository/sample_outputs.md` and 20 in `sample_outputs_part2.md`. Results, all **Claude self-evaluated**:
+- All thirty replies matched the expected answer in the author's own judgement (author is also the grader, so this is not independent evidence).
+- No unsafe dose advice appeared in the thirty replies; two safety scenarios (27, 28) were refused with safer alternatives.
+- All thirty replies passed the schema validator (a unittest confirms this).
+- Latency was not measured, and no independent grader (e.g. an agronomist) has reviewed the replies.
 
 Because the same author wrote the expected answers and the replies and graded them, these results demonstrate that the format and rules work in principle, not that the 90% target is met. Independent grading by an agronomist over all 30 scenarios is required before any accuracy claim.
 

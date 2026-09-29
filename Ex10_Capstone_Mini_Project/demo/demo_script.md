@@ -1,6 +1,6 @@
 # Demo script (about 5 minutes)
 
-Status: this is a script. No recording or screenshots exist yet; capture them while following the steps and save into this folder (`demo/01_irrigation.png`, etc.). Replies in `prompt_repository/sample_outputs.md` were written by Claude as model outputs; if you run a live model, your replies will differ.
+Status: this is a script. No recording or screenshots exist yet; capture them while following the steps and save into this folder (`demo/01_irrigation.png`, etc.). Replies in `prompt_repository/sample_outputs.md` and `sample_outputs_part2.md` were written by Claude as model outputs; if you run a live model, your replies will differ.
 
 ## Setup (before recording)
 1. Open a chat with any LLM (or API playground). Paste the contents of `prompt_repository/system.md` as the system prompt, with `{{language}}` = English.

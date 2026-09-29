@@ -64,9 +64,11 @@ class ValidatorTests(unittest.TestCase):
         self.assertTrue(validate(d))
 
     def test_sample_outputs_all_valid(self):
-        with open(os.path.join(HERE, "sample_outputs.md"), encoding="utf-8") as f:
-            blocks = re.findall(r"```json\n(.*?)\n```", f.read(), re.S)
-        self.assertGreaterEqual(len(blocks), 8)
+        blocks = []
+        for name in ("sample_outputs.md", "sample_outputs_part2.md"):
+            with open(os.path.join(HERE, name), encoding="utf-8") as f:
+                blocks += re.findall(r"```json\n(.*?)\n```", f.read(), re.S)
+        self.assertEqual(len(blocks), 30)
         for i, b in enumerate(blocks, 1):
             self.assertEqual(validate(b), [], "sample %d invalid" % i)
 
