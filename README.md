@@ -16,5 +16,8 @@ One folder per experiment, with a separate course item for the scenario-based Ex
 | [Ex09](Ex09_Image_Video_Prompting) | Image & video prompting techniques | Four image outputs and one Grok video generated; further video runs gated by a paid plan, MP4 download incomplete |
 | [Ex10](Ex10_Capstone_Mini_Project) | Capstone: Smart Agriculture Advisor | Project report, prompt repository, validator, demo script and editable presentation |
 
+## Submission status
+The results package has been pushed to the GitHub branch `codex/complete-experiments`. Experiments 1–8 and 10 have their recorded materials in this repository. Experiment 9 is included with its completed image work and one generated video; the additional video runs and saved MP4 are incomplete, as documented in its lab record.
+
 ## Notes for submission
-Each folder has a `LAB_RECORD.md` with results and limitations. Some model comparisons use outputs already in the repository or one current-session answer set; response times and independent expert scores are not invented. Add your name and registration number to the lab records before submitting. Do not copy these materials to a separate course repository unless that is the repository your instructor assigned you.
+Each folder has a `LAB_RECORD.md` with results and limitations. Some model comparisons use outputs already in the repository or one current-session answer set; response times and independent expert scores are not invented. Add your name and registration number to the lab records if required by your course. This GitHub update does not submit to a separate course portal.
