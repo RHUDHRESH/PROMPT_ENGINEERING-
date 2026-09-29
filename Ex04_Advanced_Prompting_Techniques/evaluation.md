@@ -1,10 +1,10 @@
 # Evaluation
 
-Score Reasoning and Correctness 1-5. **Tool = Claude only** (ChatGPT/other tools were not run). Scores are a self-assessment by the model that wrote the outputs, so treat them as provisional and re-score by hand.
+Score Reasoning and Correctness 1-5. The main technique table reports Claude outputs; its scores are self-assessments by the model that wrote them. Grok (Fast) was used only for the additional Active Prompting run set below. ChatGPT and other platforms were not run for the remaining techniques. Treat model scores as provisional and re-score by hand.
 
 **Tokens column:** real token counts were not available. The figure is an **approximate word count** (prompt + output, prompt estimated at about 45 words), rounded to the nearest 10. It is a proxy only; actual tokens are usually about 1.3x the word count for English text.
 
-Rows for Active prompting come from a **simulation** (5 samples reasoned, not run); see `outputs/active_claude.md`.
+The three Claude Active rows below are **simulations**; see `outputs/active_claude.md`. Grok browser samples were run five times per case before and after exemplars; see `outputs/active_grok.md`.
 
 | Technique | Case | Tool | Reasoning | Correctness | Tokens (approx. words) | Notes |
 |---|---|---|---|---|---|---|
@@ -30,6 +30,10 @@ Rows for Active prompting come from a **simulation** (5 samples reasoned, not ru
 | Graph | Robot | Claude | 5 | 5 | ~310 | Full distance table; shortest path A,C,B,D,E,F = 13 (verified). |
 | Active | Robot | Claude | 4 | 4 | ~350 | Simulated. Answer "stop then replan"; least disagreement (4:1) in simulation. |
 
+
+## Grok active-prompting sample
+
+Grok Fast was sampled in the browser for drone navigation, smart irrigation and robot path planning. Each case had five baseline answer variants, a human-written exemplar, and five exemplar-guided variants. Decisions stayed unanimous in every set: drone RETURN 5/5 before and after; irrigation WATER 5/5 before and after; robot REPLAN 5/5 before and after. The exemplars did not change binary decision consistency, but they prompted more cautious explanations for the drone and irrigation cases. See [`outputs/active_grok.md`](outputs/active_grok.md) for prompts, exemplars and observations. This is not an expert accuracy score; the drone prompt lacks airspeed and energy-consumption inputs, and the irrigation prompt lacks crop-specific thresholds.
 ## Ground truths to check against (verified)
 - **CoT irrigation:** 2000 m² x 4 mm = 8000 L (1 mm over 1 m² = 1 L); minus 1 mm rain (2000 L) = 6000 L; 6000/30 = **200 min**. Verified correct.
 - **CoT drone:** distance = 6 x 0.5 (delay) + 6²/(2x4) = 3 + 4.5 = **7.5 m < 30 m -> stops in time**. Verified correct. **Correction to the earlier note:** the old note called "2.5 s" a distractor and said stop time was 1.5 s of braking. The calculation is right (braking time 6/4 = 1.5 s), but the prompt's "needs 2.5 s to stop" is not a harmless distractor: it is inconsistent with the other numbers, since 0.5 s delay + 1.5 s braking = **2.0 s** total, not 2.5 s. The answer does not depend on it: even at constant 6 m/s for the whole 2.5 s the drone covers at most 15 m (< 30 m). Good answers should use v²/(2a) and state the inconsistency. (If instead 2.5 s were the braking time alone, deceleration would be 6/2.5 = 2.4 m/s², not 4 m/s², so the prompt over-specifies.)
@@ -41,6 +45,6 @@ Rows for Active prompting come from a **simulation** (5 samples reasoned, not ru
 - **Drone:** Chain-of-Thought for the stopping-distance question because it exposed the inconsistent 2.5 s figure; Persona (flight-controller engineer) for safety review; Graph (state machine) for mission-logic verification.
 - **Robot:** Graph prompting with Dijkstra was exact and fully verifiable (13); CoT was best for the A* versus Dijkstra comparison, and Few-shot was the cheapest correct choice of algorithm (D* Lite, ~90 words).
 
-**Token trade-off:** Few-shot (~90-120 words) and CoT numeric problems (~120) were the cheapest per useful answer. Persona, Graph and Reverse cost about 200-300 words and repay it when the task needs breadth, structure or review. Active prompting was the most expensive (350-450 words) because it involves 5 samples plus an exemplar plus a re-run, and here it was only simulated, so its benefit (more consistent answers) is unproven by this exercise. Overall rule: use CoT for calculations, Few-shot for classification or choices with clear precedents, Persona/Graph for design and safety analysis, Reverse for requirements gathering, and reserve Active prompting for places where repeated runs really do disagree.
+**Token trade-off:** Few-shot (~90-120 words) and CoT numeric problems (~120) were the cheapest per useful answer. Persona, Graph and Reverse cost about 200-300 words and repay it when the task needs breadth, structure or review. Active prompting requires five samples, an exemplar and five re-runs. In the Grok browser runs below, all three binary decisions were already unanimous before the exemplar, so the exemplar did not improve decision consistency; it made the drone and irrigation rationales more cautious. The Claude Active rows remain simulations. Overall rule: use CoT for calculations, Few-shot for classification or choices with clear precedents, Persona/Graph for design and safety analysis, Reverse for requirements gathering, and reserve Active prompting for places where repeated runs really do disagree.
 
-**Caveats:** single tool, self-scored, word counts instead of tokens, and Active prompting simulated.
+**Caveats:** Claude scores are self-scored, word counts are proxies for tokens, and the Grok active-prompting observations are single-session samples with some truncated answers. The Claude Active rows are simulated.

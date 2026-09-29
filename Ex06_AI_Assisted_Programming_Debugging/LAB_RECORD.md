@@ -10,7 +10,7 @@
 Use AI to write, debug, optimise, explain and test code in Python, C and Java.
 
 ## Tools / Apparatus
-Python reference code run in this session (5 tests passed); C and Java compilers were unavailable
+Python: 5 tests passed locally. C: 6 checks passed in OneCompiler online. Java: 6 checks passed in OneCompiler online. Local GCC/JDK are not installed.
 
 ## Procedure
 1. Prompts written (see `prompts/` or the folder README).
@@ -22,9 +22,9 @@ Python reference code run in this session (5 tests passed); C and Java compilers
 See `code_quality_analysis.md`. Add your own scores for any tool you ran yourself. Tools not run are left blank; do not fill them in from memory.
 
 ## Result
-Buggy and fixed binary search examples, prompts and a code-quality analysis cover Python, C and Java. The Python tests passed (5/5); C and Java sources could not be compiled in this environment.
+Buggy and fixed binary search examples, prompts and a code-quality analysis cover Python, C and Java. Python 5/5 passed locally. Combined C implementation and six checks compiled and passed in OneCompiler; combined Java implementation and six checks compiled and passed there. Details are in `validation_run.md`.
 
 ## Conclusion
-Executing tests exposed errors in earlier bug notes and confirmed the Python fix. Static review can identify likely C/Java issues, but those implementations still need compiler runs on a machine with GCC and a JDK.
+Executing tests exposed errors in earlier bug notes and confirmed all three fixed implementations. C and Java were compiled as single-file test harnesses in OneCompiler; the original separate-file projects still need a local GCC/JDK run if the instructor requires those exact command-line builds.
 
 ## Faculty signature: ______________

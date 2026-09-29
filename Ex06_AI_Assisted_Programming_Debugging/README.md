@@ -21,3 +21,8 @@ python3 python/test_binary_search.py
 gcc c/test_binary_search.c c/binary_search_fixed.c -o c/t && ./c/t
 cd java && javac BinarySearch.java BinarySearchTest.java && java BinarySearchTest
 ```
+
+
+## Recorded run
+
+Python passed locally (5 tests). C (6 checks) and Java (6 checks) compiled and passed in OneCompiler online on 2026-09-29. For the browser compiler, each implementation and its test cases were combined into one source file because the free editor uses a single-file harness. The original separate-file GCC/JDK commands above were not run locally; see validation_run.md.

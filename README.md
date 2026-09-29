@@ -7,13 +7,13 @@ One folder per experiment, with a separate course item for the scenario-based Ex
 | [Ex01](Ex01_GenAI_LLM_Fundamentals_Report) | Fundamentals of GenAI & LLMs — compare ChatGPT and Claude | Two answer sets, report, provisional comparison |
 | [Ex02](Ex02_Cross_Platform_Prompting) | Cross-platform prompting: basic -> role -> context -> constraint -> format | Two answer sets and evaluation |
 | [Ex03](Ex03_Prompt_Types_Chatbot) | Four prompt types for a support chatbot | Two answer sets and evaluation |
-| [Ex04](Ex04_Advanced_Prompting_Techniques) | Seven advanced techniques across three engineering cases | Prompts, outputs and evaluation; active prompting is simulated |
+| [Ex04](Ex04_Advanced_Prompting_Techniques) | Seven advanced techniques across three engineering cases | Prompts, outputs and evaluation; Grok active prompts sampled 5x before/after exemplar |
 | [Ex04b](Ex04b_Scenario_Based_Report) | Scenario-based report using diverse prompting techniques | Prompts, model outputs, completed board report |
 | [Ex05](Ex05_Prompt_Chaining_Smart_Traffic) | Prompt chaining: Smart Traffic System | Eight steps, Python reference code; 6 tests pass |
-| [Ex06](Ex06_AI_Assisted_Programming_Debugging) | AI-assisted programming & debugging (Python, C, Java) | Code and analysis; Python's 5 tests pass; C/Java compilers unavailable here |
+| [Ex06](Ex06_AI_Assisted_Programming_Debugging) | AI-assisted programming & debugging (Python, C, Java) | Code and analysis; Python 5 tests pass locally; C 6 checks and Java 6 checks pass in OneCompiler online |
 | [Ex07](Ex07_Personal_Productivity_Assistant) | Personal productivity assistant | Offline CLI and prompts; 4 tests pass |
 | [Ex08](Ex08_Image_Reproduction_Prompts) | Reproducing an image with prompts | Generated sample reference and two saved iterations |
-| [Ex09](Ex09_Image_Video_Prompting) | Image & video prompting techniques | Four image outputs; video generation unavailable in this session |
+| [Ex09](Ex09_Image_Video_Prompting) | Image & video prompting techniques | Four image outputs and one Grok video generated; further video runs gated by a paid plan, MP4 download incomplete |
 | [Ex10](Ex10_Capstone_Mini_Project) | Capstone: Smart Agriculture Advisor | Project report, prompt repository, validator, demo script and editable presentation |
 
 ## Notes for submission
