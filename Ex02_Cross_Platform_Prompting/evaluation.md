@@ -1,22 +1,25 @@
 # Evaluation
 
-Score 1–5. ChatGPT was not run, so its rows are 'n/a - not run'. Claude scores are self-assessed by the model that produced the outputs (word counts checked by script) and are therefore biased.
+Scores use 1–5. ChatGPT outputs were produced in the current Codex session; Claude outputs were already in the repository. The ChatGPT scores are provisional review by the model that produced those outputs, while the repository's Claude scores were originally self-assessed. Word counts and JSON can be checked mechanically; readability scores are subjective. No stopwatch was used.
 
 | Level | Tool | Faithful to source | Follows constraints | Format correct | Readability | Notes |
-|---|---|---|---|---|---|---|
-| 1 Basic | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| 1 Basic | Claude | 4 | 5 | n/a (no format requested) | 4 | 102 words; faithful and includes model names GPT/Claude/Gemini. Jargon (self-attention, RAG) not explained; not tailored to students. |
-| 2 Role | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| 2 Role | Claude | 4 | 5 | n/a (no format requested) | 4 | 123 words; adds a headline and paragraphs, slightly more magazine-like. Still no jargon explanations, and slightly longer than L1. |
-| 3 Context | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| 3 Context | Claude | 4 | 5 | n/a (no format requested) | 5 | 131 words; explains tokens, hallucination and RAG in plain language, suited to students. Longest output; no length limit yet, so this is not a violation. |
-| 4 Constraint | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| 4 Constraint | Claude | 4 | 4 | n/a (text) | 3 | 57 words (counted by script), under the 60 limit; no company names; jargon glossed in 3 words. Dense and telegraphic, hurting readability. Minor risk: 'human feedback', 'retrieval' are not glossed, and gloss of 'self-attention' is my own paraphrase. |
-| 5 Format | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| 5 Format | Claude | 4 | 5 | 5 | 3 | JSON validated with json.load; headline 7 words, summary 52 words, all meanings <=3 words after one fix (one meaning first had 4 words and was corrected before saving). Exactly 2 limitations. No company names. Machine-readable but terse. |
+|---|---|---:|---:|---:|---:|---|
+| 1 Basic | ChatGPT | 5 | 5 | N/A | 4 | Covers the source's main claims without a requested length cap; concise. |
+| 1 Basic | Claude | 4 | 5 | N/A | 4 | Original repository score; covers the central points and names products. |
+| 2 Role | ChatGPT | 5 | 5 | N/A | 5 | Adds a headline and magazine-style paragraphs without unsupported facts. |
+| 2 Role | Claude | 4 | 5 | N/A | 4 | Original repository score; more magazine-like than level 1. |
+| 3 Context | ChatGPT | 5 | 5 | N/A | 5 | Explains token, hallucination and retrieval in plain language for the stated audience. |
+| 3 Context | Claude | 4 | 5 | N/A | 5 | Original repository score; explains several technical terms for students. |
+| 4 Constraint | ChatGPT | 5 | 4 | N/A | 4 | 49-word reply and no company names. Some technical terms could be glossed more explicitly. |
+| 4 Constraint | Claude | 4 | 4 | N/A | 3 | Original repository score; 57 words, but dense and not all jargon is glossed. |
+| 5 Format | ChatGPT | 5 | 5 | 5 | 4 | JSON has the requested keys; headline is under 8 words, summary under 60 words, and limitations has two entries. |
+| 5 Format | Claude | 4 | 5 | 5 | 3 | Original repository score; JSON was reported as validated, with terse wording. |
 
 ## Observations
-- **What changed most between levels?** Level 3 (context) changed the content most: the text gained plain-language explanations of tokens, hallucination and retrieval for the student audience. Level 4 (constraints) changed length and style most: from about 130 words down to 57, at the cost of readability. Level 2 (role) changed little beyond adding a headline and a magazine feel. Level 5 changed structure: valid, machine-readable JSON with glossed key terms.
-- **Which constraint was ignored, and by which tool?** No constraint was ignored by Claude in this run: level 4 was 57 words, no company names, and glosses of 3 words or fewer; level 5 was valid JSON within the field limits. One draft glossary entry at level 5 was 4 words and was fixed before saving. Not all jargon in level 4 was glossed (for example 'fine-tuned', 'retrieval'), which is a soft weakness. For ChatGPT: not run, so nothing can be said.
-- **Caveat:** levels 1-3 have no length limit, so their outputs are long relative to a sidebar; the comparison across levels is from a single run each and not repeated.
-- **Final "user-defined" prompt chosen and why:** Level 5 as written, with one tweak for real use: add "Write the summary in plain sentences rather than telegraphic fragments, and gloss every technical term used in the summary." Level 5 is chosen because it is the only level whose output is verifiable (word counts, JSON validity), it keeps the audience context that made level 3 readable, and its constraints held. Its weakness, terse prose, is what the tweak addresses. Untested with ChatGPT.
+- Context and constraints change the content and audience fit most; formatting makes the output machine-checkable.
+- Level 4 is 49 words in the ChatGPT output and uses no company names. Its explanations can still improve.
+- Level 5 follows the requested structure. The fenced payload should be passed to `json.loads` if machine validation is required.
+- The saved outputs are single samples; fresh identical runs and blind human scoring would make this comparison more reliable.
+
+## Final user-defined prompt
+Level 5, with this added instruction: “Write the summary in plain sentences rather than fragments, explain every technical term used, and include only facts stated in the source.” It keeps audience context and produces verifiable fields while addressing the terse style seen in the saved samples.

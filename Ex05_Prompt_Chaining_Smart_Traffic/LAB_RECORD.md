@@ -4,13 +4,13 @@
 |---|---|
 | Name / Reg. No. | ______________ |
 | Date | ______________ |
-| Repo | https://github.com/RaajaThilahar/Ex.No.___ |
+| Repo | https://github.com/RHUDHRESH/PROMPT_ENGINEERING- |
 
 ## Aim
 Solve an engineering problem via a prompt chain (problem to documentation).
 
 ## Tools / Apparatus
-Claude (done) + working Python code
+Claude-generated chain artefacts and Python reference implementation; 6 Python unit tests passed in this session
 
 ## Procedure
 1. Prompts written (see `prompts/` or the folder README).
@@ -22,9 +22,9 @@ Claude (done) + working Python code
 See `comparison.md`. Add your own scores for any tool you ran yourself. Tools not run are left blank; do not fill them in from memory.
 
 ## Result
-<2-3 lines: what was produced and what the comparison showed>
+An eight-step prompt chain links requirements through documentation for a smart traffic controller. The reference code passes six Python unit tests. The single-shot comparison is an unmeasured expectation, not an experimental result.
 
 ## Conclusion
-<what you learned; which technique/tool worked best and why>
+Chaining makes intermediate requirements reviewable and gives a clear place to find drift. Tests still determine code behaviour; the chain does not guarantee correctness. Broader edge cases and a measured single-shot baseline would strengthen the study.
 
 ## Faculty signature: ______________

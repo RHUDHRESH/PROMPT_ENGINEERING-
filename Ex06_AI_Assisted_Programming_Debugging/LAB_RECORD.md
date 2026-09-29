@@ -4,13 +4,13 @@
 |---|---|
 | Name / Reg. No. | ______________ |
 | Date | ______________ |
-| Repo | https://github.com/RaajaThilahar/Ex.No.___ |
+| Repo | https://github.com/RHUDHRESH/PROMPT_ENGINEERING- |
 
 ## Aim
 Use AI to write, debug, optimise, explain and test code in Python, C and Java.
 
 ## Tools / Apparatus
-Claude (done); code run locally
+Python reference code run in this session (5 tests passed); C and Java compilers were unavailable
 
 ## Procedure
 1. Prompts written (see `prompts/` or the folder README).
@@ -22,9 +22,9 @@ Claude (done); code run locally
 See `code_quality_analysis.md`. Add your own scores for any tool you ran yourself. Tools not run are left blank; do not fill them in from memory.
 
 ## Result
-<2-3 lines: what was produced and what the comparison showed>
+Buggy and fixed binary search examples, prompts and a code-quality analysis cover Python, C and Java. The Python tests passed (5/5); C and Java sources could not be compiled in this environment.
 
 ## Conclusion
-<what you learned; which technique/tool worked best and why>
+Executing tests exposed errors in earlier bug notes and confirmed the Python fix. Static review can identify likely C/Java issues, but those implementations still need compiler runs on a machine with GCC and a JDK.
 
 ## Faculty signature: ______________

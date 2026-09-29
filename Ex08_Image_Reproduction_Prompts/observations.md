@@ -1,24 +1,13 @@
 # Observations
 
-## Template (fill from your real generations)
-| Version | Image | Match to original (1-5) | What differs | Change for next version |
-|---|---|---|---|---|
-| v1 | generated_images/v1.png | | | |
-| v2 | generated_images/v2.png | | | |
-| v3 | generated_images/v3.png | | | |
-| v4 | generated_images/v4.png | | | |
+| Version | Image | Match to reference (1-5) | What differs | Change for next version |
+|---|---|---:|---|---|
+| v1 | `generated_images/v1.png` | 4 | Close match in mountain layers, sunset, river, forest and mist. The sky is brighter orange than the reference and the horizon placement is not exact. | Add a pale pink upper-sky band, specify the upper-third horizon and reduce orange brightness. |
+| v2 | `generated_images/v2.png` | 4 | The upper sky is paler and the river route stays close. Cloud shapes, shoreline and mountain details still vary. | No further change; those fine details vary between generations. |
 
-## Worked example (example on a sample landscape, replace with your assigned image)
-**No images were generated.** Scores are left blank; the "expected difference" column is a prediction of typical behaviour, not an observation.
-
-| Version | Image | Match (1-5) | Expected difference (prediction) | Change for next version |
-|---|---|---|---|---|
-| v1 | not generated | blank | Generic scene; random palette, framing and style | Add colours, river, mist, style |
-| v2 | not generated | blank | Palette closer; light direction and composition uncontrolled | Add camera, light direction, leading line |
-| v3 | not generated | blank | Mood close; horizon height, tree placement, river direction may differ | Pin horizon, trees, river path; add negatives |
-| v4 | not generated | blank | Expected closest; fine details still vary by seed | Stop, or fix seed and tweak one variable |
+The scores are visual judgments by one reviewer comparing the saved images with the sample reference. There was one generation per version, no fixed seed, and the reference itself was generated for this exercise. These scores are not a reproducible benchmark.
 
 ## Conclusion
-Most useful prompt elements: (fill after generation)
+The most useful prompt elements were spatial relationships (river entering at bottom-left and leading toward the center), palette and light direction. The targeted refinement lightened the upper sky while largely preserving the composition.
 
-Hypotheses to test: (1) light direction and camera words change mood most; (2) spatial words ("left third", "bottom-left") help but are followed unreliably by some models; (3) negatives remove unwanted elements but do not add missing ones.
+Limitations: no fixed seed was available; generated details changed between samples; the image tool did not provide a quantitative similarity score.

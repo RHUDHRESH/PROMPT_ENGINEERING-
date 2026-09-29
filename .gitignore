@@ -4,3 +4,5 @@ __pycache__/
 memory.json
 .DS_Store
 c/t
+.presentation_build/
+.codex-finalizer/

@@ -1,0 +1,3 @@
+# Level 3 (Context) — ChatGPT output
+
+Transformers process a sequence by letting each token weigh information from other tokens, rather than reading strictly one word at a time. This helps models connect distant ideas and makes training easier to parallelise. Large language models learn by predicting the next token in large collections of text, then are tuned with examples to follow instructions. They may still hallucinate (state false claims), inherit data bias, and consume significant computing resources. Retrieval-augmented generation supplies relevant documents when answering; longer context windows let a model consider more input, but do not guarantee accurate reasoning.

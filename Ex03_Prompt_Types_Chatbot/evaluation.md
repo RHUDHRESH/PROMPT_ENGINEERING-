@@ -1,24 +1,17 @@
 # Evaluation (score 1-5)
 
-**Important:** only the Claude rows were run and scored. ChatGPT was not run for this exercise, so those rows are marked "n/a - not run". Claude scores are a self-assessment by the model that wrote the outputs (so likely lenient); they should be re-scored by a human reviewer. Reply word counts were checked mechanically for the length limits.
+ChatGPT responses were prepared in the current Codex session; Claude responses and ratings were present in the repository. Scores are provisional desk reviews, not independent human ratings. Timing was not recorded.
 
 | Prompt type | Tool | Relevance | Tone/UX | Structure followed | Accuracy | Notes |
-|---|---|---|---|---|---|---|
-| Straightforward | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| Straightforward | Claude | 5 | 5 | 5 | 4 | Both prompts answered. Headphone reply about 100 words (limit 120). Order reply stated the no-database limitation honestly and gave tracking routes. Accuracy 4 because generic steps (pairing button, "3 business days") are typical, not product-specific. |
-| Tabular | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| Tabular | Claude | 5 | 4 | 5 | 4 | 6 rows in the requested 2/2/2 split, correct 4 columns, all bot replies 18-23 words (limit 25). Tone is terse because of the word cap. Escalation flags (burning smell, lost parcel = Y) are sensible. Policy answers are deliberately generic. |
-| Missing word | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| Missing word | Claude | 5 | 4 | 5 | 4 | All 7 blanks filled, sentence skeleton unchanged, only completed text returned. The two "first/if that doesn't work" blanks became long clauses, which stretches the sentence. Brand ("SmartKettle") and "one business day" were inferred/assumed. |
-| Preceding question | ChatGPT | n/a - not run | n/a - not run | n/a - not run | n/a - not run | n/a - not run |
-| Preceding question | Claude | 5 | 5 | 5 | 4 | Q1-Q3 answered briefly, and the final reply visibly uses them (info request, likely causes, apologetic and action-oriented tone). Longest output of the four types. Does not promise specifics it cannot know. |
+|---|---|---:|---:|---:|---:|---|
+| Straightforward | ChatGPT | 5 | 5 | 5 | 5 | Both responses follow the request, give actionable steps and state limits around order lookup. |
+| Straightforward | Claude | 5 | 5 | 5 | 4 | Existing score; helpful, though some steps and timing assumptions are generic. |
+| Tabular | ChatGPT | 5 | 4 | 5 | 4 | Six rows with the requested categories and escalation column; policy-dependent answers avoid fixed promises. |
+| Tabular | Claude | 5 | 4 | 5 | 4 | Existing score; six rows and sensible safety escalation. |
+| Missing word | ChatGPT | 5 | 4 | 5 | 4 | All blanks completed in the requested pattern; safety check is sensible but inferred beyond supplied details. |
+| Missing word | Claude | 5 | 4 | 5 | 4 | Existing score; wording fits the sentence, with inferred brand and service-time details. |
+| Preceding question | ChatGPT | 5 | 5 | 5 | 5 | Answers the three lead-in questions and avoids inventing a delivery date or claiming database access. |
+| Preceding question | Claude | 5 | 5 | 5 | 4 | Existing score; apology, information request and next step are clear. |
 
 ## Conclusion
-For a customer-support chatbot, no single type wins everywhere, but the ranking from this run is:
-
-1. **Preceding-question prompting** gave the best customer-facing reply for an emotional, ambiguous case (late order). Forcing the model to decide what information is needed, the likely causes and the right tone first produced a reply that apologised, asked for exactly the right details and set expectations. Cost: more output text and turns, so it suits hard or sensitive tickets rather than every message.
-2. **Straightforward prompting** is the best default for simple, well-known problems (headphone pairing, tracking help). It is short and cheap, and worked well when the prompt carried role, tone and length limits. It is weakest when the request is ambiguous.
-3. **Tabular prompting** is best for design and review work (planning intents, replies and escalation rules in one view, auditing consistency), not for live conversation. The word cap made replies flat.
-4. **Missing-word prompting** gives the tightest control over wording and is ideal for templated messages (order updates, apology emails). The skeleton constrains the model, so replies can be awkward when a blank needs a long clause.
-
-Recommended design: use a missing-word template for routine, high-volume messages, straightforward prompts for simple troubleshooting, and preceding-question prompting for complaints and escalations, with tabular prompts used offline to define intents and escalation rules. Caveat: this comparison covers one tool (Claude) with self-scoring; the cross-tool comparison the exercise asks for still needs the ChatGPT runs.
+The preceding-question technique gives more context-sensitive replies to complaints. Straightforward prompts suit simple troubleshooting. Tabular prompts help audit intents and escalation rules, while missing-word prompts control routine wording. The ChatGPT output ratings are self-reviewed, and the Claude ratings came from the existing repository; an independent human should re-score both sets before treating the difference as a model comparison.

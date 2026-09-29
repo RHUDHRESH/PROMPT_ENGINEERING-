@@ -30,16 +30,16 @@ Some abilities appear to emerge suddenly at scale, though later analyses suggest
 An LLM is a very large neural network, usually a decoder-only transformer, trained to predict the next token. Construction proceeds in stages. Data is collected, deduplicated and filtered. Text is tokenized into subwords (for example byte-pair encoding). Pre-training on trillions of tokens builds general knowledge. Supervised fine-tuning on instruction-response examples teaches the model to follow instructions. Preference tuning, such as RLHF (Ouyang et al., 2022, InstructGPT) or simpler methods like DPO, aligns behaviour with human preferences. Evaluation uses benchmarks, human preference tests and red-teaming. Deployment relies on quantization, caching, batching and guardrails. Exact recipes differ between organisations and are often not disclosed, so this pipeline describes the typical case rather than any specific model.
 
 ## 6. Tool comparison summary (see `comparison.md`)
-The exercise asks for the same five prompts to be run on ChatGPT and Claude and scored on accuracy, creativity, hallucination, reasoning, speed and engineering usefulness. In this submission only Claude's answers were produced; ChatGPT was not run and its column is marked "n/a - not run". Claude's scores are a self-assessment and therefore biased, and speed was not measured. In the Claude answers, the attention formula and worked example were correct, uncertain claims (such as the exact title of the emergence paper) were flagged, and word limits were respected. Any real comparison requires pasting ChatGPT's answers, timing both tools and verifying citations independently.
+The repository contains Claude answers saved earlier and ChatGPT answers produced in the current Codex session. Both were reviewed against the same five topics. The provisional desk-review scores are tied at 19/25 with speed omitted because it was not measured. The Claude scores were initially self-assessed by the model that supplied those answers; neither column is an independent human evaluation. Fresh, timed runs and blind human scoring would make the comparison stronger.
 
 ## 7. Conclusion
 Generative AI has moved from specialised models such as GANs and VAEs to transformer-based LLMs and diffusion models, whose quality comes largely from scale and from careful post-training. Understanding the mechanics (attention, next-token prediction, fine-tuning, preference tuning) helps engineers pick the right architecture, set realistic expectations and design safeguards. The main risks remain hallucination, cost, bias and limited transparency. Comparing tools on identical prompts is useful, but conclusions should wait until every tool has actually been run and the claims verified.
 
 ## References
-1. Vaswani, A., et al. (2017). Attention Is All You Need. NeurIPS 2017.
-2. Kaplan, J., et al. (2020). Scaling Laws for Neural Language Models. arXiv:2001.08361.
-3. Hoffmann, J., et al. (2022). Training Compute-Optimal Large Language Models (Chinchilla). arXiv:2203.15556.
-4. Ouyang, L., et al. (2022). Training language models to follow instructions with human feedback (InstructGPT). NeurIPS 2022.
-5. Goodfellow, I., et al. (2014). Generative Adversarial Nets. NeurIPS 2014.
-6. Kingma, D. P., and Welling, M. (2013). Auto-Encoding Variational Bayes. arXiv:1312.6114.
-7. Ho, J., Jain, A., and Abbeel, P. (2020). Denoising Diffusion Probabilistic Models. NeurIPS 2020.
+1. Vaswani, A., et al. (2017). [Attention Is All You Need](https://arxiv.org/abs/1706.03762). NeurIPS 2017.
+2. Kaplan, J., et al. (2020). [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361).
+3. Hoffmann, J., et al. (2022). [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556) (Chinchilla).
+4. Ouyang, L., et al. (2022). [Training language models to follow instructions with human feedback](https://arxiv.org/abs/2203.02155) (InstructGPT). NeurIPS 2022.
+5. Goodfellow, I., et al. (2014). [Generative Adversarial Nets](https://arxiv.org/abs/1406.2661). NeurIPS 2014.
+6. Kingma, D. P., and Welling, M. (2013). [Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114).
+7. Ho, J., Jain, A., and Abbeel, P. (2020). [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239). NeurIPS 2020.

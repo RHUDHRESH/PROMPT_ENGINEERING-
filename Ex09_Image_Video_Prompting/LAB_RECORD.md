@@ -4,27 +4,27 @@
 |---|---|
 | Name / Reg. No. | ______________ |
 | Date | ______________ |
-| Repo | https://github.com/RaajaThilahar/Ex.No.___ |
+| Repo | https://github.com/RHUDHRESH/PROMPT_ENGINEERING- |
 
 ## Aim
 Show how simple vs detailed vs structured prompts change image and video output.
 
 ## Tools / Apparatus
-Image/video tool (yours to run)
+Built-in Codex image generation; four image samples. No video generator was available in this session.
 
 ## Procedure
-1. Prompts written (see `prompts/` or the folder README).
-2. Each prompt run on every tool; raw outputs saved under `outputs/` (or the folder's equivalent).
-3. Results scored in `evaluation.md` on: Quality, adherence, coherence, style.
-4. Findings summarised below.
+1. Prepared four prompt levels for the same robot-gardener scene.
+2. Generated one image for each level and saved them in `generated_images/`.
+3. Scored image quality, adherence, coherence and style in `evaluation.md`.
+4. Prepared four video prompts; video generation and scoring require a video model and remain unrun.
 
 ## Observations
-See `evaluation.md`. Add your own scores for any tool you ran yourself. Tools not run are left blank; do not fill them in from memory.
+See `evaluation.md`. Image scores are single-reviewer judgments. Video scores are marked not run because no video tool was available.
 
 ## Result
-<2-3 lines: what was produced and what the comparison showed>
+Four image outputs show stronger control after adding scene details and camera/composition terms. The structured style request was less reliable. Video prompts are ready, but no video result is included.
 
 ## Conclusion
-<what you learned; which technique/tool worked best and why>
+Detailed prompts improved visible subject and setting adherence in these samples. Style labels can be interpreted loosely; repeated samples and actual video outputs are needed to draw a stronger conclusion.
 
 ## Faculty signature: ______________

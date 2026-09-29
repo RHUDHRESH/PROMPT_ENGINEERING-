@@ -1,36 +1,28 @@
 # Prompt iterations
-Tool used: ________  Seed/settings: ________ (fill when you generate)
 
-> The v1-v4 below are a **worked example on a sample landscape (replace with your assigned image)**. No images have been generated for them. Keep the same seed/settings between versions where the tool allows, so changes come from the prompt only.
+Tool used: built-in image generation in Codex. The tool did not expose a repeatable seed. v1 was generated with the sample reference; v2 used v1 as an image reference.
 
-## v1 - Basic
-```
-A sunset over a mountain range
-```
-Intent: baseline; see what the model assumes by default.
+> The reference is `reference_image/sample_reference.png`. The reference itself was generated for this exercise because the course image was not included. These are single samples, not a controlled benchmark.
 
-## v2 - Details (colours, shapes, textures, style)
+## Reference creation prompt
 ```
-A sunset over purple mountains, golden sky, a calm river winding through the valley, soft mist, photorealistic
+Use case: reference image for a prompt-engineering lab. Asset type: photorealistic landscape photograph. Primary request: a sunset over a mountain range with a calm river winding from the bottom-left foreground toward the center peaks, and two small pine trees on the left riverbank. Composition: wide 16:9 landscape, eye-level, river as a clear leading line, layered mountain ridges, horizon on upper third. Palette: deep purple mountains, golden-orange horizon, pale pink upper sky, cool teal river shadows. Lighting: low sun hidden behind the ridge, warm rim light, thin mist between ridges. Constraints: no people, buildings, text, logos, borders, or watermark; realistic natural landscape.
 ```
-Added: colours, secondary object (river), atmosphere, style.
 
-## v3 - Composition + lighting + camera
+## v1 - Faithful recreation
 ```
-Wide-angle landscape photo, low sun on the horizon backlighting layered purple mountain ridges, warm golden-hour light, reflective river in the foreground leading the eye to the peaks, shallow haze, 16:9, high detail
+Create a faithful new image inspired by the reference for an image-prompting experiment. Preserve its wide landscape composition: orange and pink sunset above layered purple mountains, central low sun behind the ridge, mist in the valley, dark pine forest, and a reflective river across the foreground. Keep the river entering from bottom-left and leading toward the center. Photorealistic, 16:9, no text or watermark.
 ```
-Added: lens/framing, light direction, leading line, aspect ratio.
+Result: `generated_images/v1.png`.
 
-## v4 - Correction from observed differences
-Corrections below are **hypothetical** (what one might fix after seeing typical outputs); rewrite after you really compare v3 with your reference.
+## v2 - Targeted refinement
 ```
-Wide-angle landscape photo at eye level, horizon on the upper third, low sun hidden just behind layered purple mountain ridges with pale pink upper sky, warm golden-hour rim light on ridge edges, calm reflective river entering bottom-left and winding to the peaks, a few pine trees on the left bank, thin low mist between ridges, deep depth of field, 16:9, high detail
+Refine this landscape for closer composition matching. Keep the same mountain silhouettes, river route, pine trees, mist, and warm sunset. Make the horizon sit in the upper third, reduce the brightest orange glow slightly, add a pale pink band to the upper sky, and keep the reflective river entering clearly from the bottom-left. Photorealistic wide 16:9 landscape. Do not add objects, text, or watermark.
 ```
-Negative prompt (if supported): `blurry, oversaturated, text, watermark, people, buildings, lens flare`
+Result: `generated_images/v2.png`; v1 was supplied as the image reference.
 
 ## Change log
-| From -> To | What was added | Why |
+| From -> To | What changed | Why |
 |---|---|---|
-| v1 -> v2 | colours, river, mist, style | v1 leaves everything to the model |
-| v2 -> v3 | camera, light direction, composition | control framing and mood |
-| v3 -> v4 | horizon position, sky colour, trees, river direction, negatives | pin down details that usually drift |
+| reference -> v1 | Main colors, objects, river direction, mist, wide framing | Recreate the key visible scene |
+| v1 -> v2 | Horizon placement, lighter upper sky, controlled orange brightness | Refine composition and palette while retaining the scene |

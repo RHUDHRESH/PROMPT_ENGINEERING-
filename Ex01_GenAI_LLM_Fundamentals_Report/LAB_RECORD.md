@@ -4,13 +4,13 @@
 |---|---|
 | Name / Reg. No. | ______________ |
 | Date | ______________ |
-| Repo | https://github.com/RaajaThilahar/Ex.No.___ |
+| Repo | https://github.com/RHUDHRESH/PROMPT_ENGINEERING- |
 
 ## Aim
 Compare the behaviour of different generative AI models using identical prompts.
 
 ## Tools / Apparatus
-Claude (done, `outputs/claude.md`); ChatGPT, Gemini/Perplexity (yours to run)
+Claude (saved in `outputs/model_b.md`); ChatGPT (saved in `outputs/chatgpt.md`)
 
 ## Procedure
 1. Prompts written (see `prompts/` or the folder README).
@@ -22,9 +22,9 @@ Claude (done, `outputs/claude.md`); ChatGPT, Gemini/Perplexity (yours to run)
 See `comparison.md`. Add your own scores for any tool you ran yourself. Tools not run are left blank; do not fill them in from memory.
 
 ## Result
-<2-3 lines: what was produced and what the comparison showed>
+Five prompt answers and an introductory report were prepared. The provisional desk review scores ChatGPT and Claude 19/25 each; response speed was not measured.
 
 ## Conclusion
-<what you learned; which technique/tool worked best and why>
+Identical prompts make it easier to compare model structure and coverage. The current answer set is useful for a first comparison, but timed fresh runs and independent human scoring are needed for a stronger result.
 
 ## Faculty signature: ______________

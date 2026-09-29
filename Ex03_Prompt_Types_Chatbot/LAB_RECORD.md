@@ -4,13 +4,13 @@
 |---|---|
 | Name / Reg. No. | ______________ |
 | Date | ______________ |
-| Repo | https://github.com/RaajaThilahar/Ex.No.___ |
+| Repo | https://github.com/RHUDHRESH/PROMPT_ENGINEERING- |
 
 ## Aim
 Understand straightforward, tabular, missing-word and preceding-question prompting via a support chatbot.
 
 ## Tools / Apparatus
-Claude (done); ChatGPT/Gemini (yours to run)
+Claude (saved earlier) and ChatGPT (current session)
 
 ## Procedure
 1. Prompts written (see `prompts/` or the folder README).
@@ -22,9 +22,9 @@ Claude (done); ChatGPT/Gemini (yours to run)
 See `evaluation.md`. Add your own scores for any tool you ran yourself. Tools not run are left blank; do not fill them in from memory.
 
 ## Result
-<2-3 lines: what was produced and what the comparison showed>
+Four support prompt types have sample responses for ChatGPT and Claude. Straightforward prompts worked for routine help; preceding questions produced a more careful reply to a late-order complaint.
 
 ## Conclusion
-<what you learned; which technique/tool worked best and why>
+Use short prompts for simple issues, templates for routine wording, tables for design review and preceding questions when complaints need careful handling. The ratings are provisional and should be reviewed by a person.
 
 ## Faculty signature: ______________

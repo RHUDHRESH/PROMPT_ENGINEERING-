@@ -18,4 +18,4 @@ Source text: `source_text.md` (same input for every prompt level).
 | 5 Output format | `prompts/5_output_format.md` | Exact structure |
 
 ## Procedure
-Run each level on at least two platforms (e.g. ChatGPT, Claude), save the results in `outputs/level<N>_<tool>.md`, then complete `evaluation.md`.
+Saved ChatGPT and Claude responses are in `outputs/level<N>_<tool>.md`; the provisional scoring is in `evaluation.md`. Response speed was not measured, and the ratings need independent human review.

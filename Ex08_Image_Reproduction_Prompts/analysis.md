@@ -1,36 +1,20 @@
 # Image analysis
 
-> Two parts: (A) blank template for YOUR assigned image, (B) a worked example on a *sample landscape*. No reference image or generated image is included in this repo yet.
+The supplied course text did not include a reference image. To complete the exercise, a sample reference was generated with the built-in image generation tool and saved at `reference_image/sample_reference.png`.
 
-## A. Template (fill for your assigned image)
 | Aspect | Observation |
 |---|---|
-| Primary subject | |
-| Secondary objects | |
-| Colour palette (dominant 3-5) | |
-| Lighting (direction, time of day, mood) | |
-| Composition (framing, rule of thirds, depth) | |
-| Style (photo, painting, 3D, anime...) | |
-| Texture / detail level | |
-| Camera (angle, lens, DOF) | |
-
-## B. Worked example (example on a sample landscape, replace with your assigned image)
-The "sample landscape" is a hypothetical description written for illustration, not a real file in `reference_image/`.
-
-| Aspect | Observation (hypothetical sample) |
-|---|---|
 | Primary subject | Layered mountain range at sunset |
-| Secondary objects | Winding river in the valley, low mist, a few pine trees on the left bank |
-| Colour palette | Deep purple (ridges), golden orange (sky near horizon), pale pink (upper sky), teal-grey (river shadow) |
-| Lighting | Low sun behind the peaks (backlit), golden hour, warm and calm; rim light on ridge edges |
-| Composition | Horizon on upper third; river leads from bottom-left to the peaks (leading line); ridges create depth through atmospheric perspective |
+| Secondary objects | Reflective winding river, pine trees, forest, valley mist |
+| Colour palette | Orange and pink sky, purple ridges, dark green forest, teal river shadows |
+| Lighting | Low sun behind the central ridge; warm backlight; calm evening mood |
+| Composition | Wide frame; ridgeline near the upper third; river leads from the bottom-left toward the center; foreground, midground and distant ridges |
 | Style | Photorealistic landscape photograph |
-| Texture / detail | Soft haze in distance, fine detail in foreground rocks and trees |
-| Camera | Eye-level to slightly elevated, wide-angle (~24 mm equivalent), deep depth of field, 16:9 |
+| Texture / detail | Fine foreground rocks and water reflections; soft atmospheric haze in distant valleys |
+| Camera | Eye-level wide view, deep focus, landscape frame |
 
-### How to analyse (quick method)
-1. Squint: note the 3-5 biggest colour areas.
-2. Locate the light source and shadow direction.
-3. Sketch the composition as 3 layers: foreground / midground / background.
-4. Name the medium and style in one phrase.
-5. Only then list small objects and textures.
+## Analysis method
+1. Identify the largest colour regions and the main subject.
+2. Locate the light source and note the direction of the shadows.
+3. Describe foreground, midground and background, including leading lines.
+4. Record the medium and style before listing small details.

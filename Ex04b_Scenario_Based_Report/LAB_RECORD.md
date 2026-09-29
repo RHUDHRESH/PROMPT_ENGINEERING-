@@ -4,7 +4,7 @@
 |---|---|
 | Name / Reg. No. | ______________ |
 | Date | ______________ |
-| Repo | https://github.com/RaajaThilahar/Ex.No.___ |
+| Repo | https://github.com/RHUDHRESH/PROMPT_ENGINEERING- |
 
 ## Aim
 Understand a scenario and generate prompts that build a full report.
@@ -22,9 +22,9 @@ Claude (done)
 See `report.md`. Add your own scores for any tool you ran yourself. Tools not run are left blank; do not fill them in from memory.
 
 ## Result
-<2-3 lines: what was produced and what the comparison showed>
+Five section prompts and outputs were assembled into a board report recommending a six-month leak-detection pilot. Scenario facts are separated from illustrative assumptions.
 
 ## Conclusion
-<what you learned; which technique/tool worked best and why>
+Breaking a report into prompt sections supports clearer structure and review. Replace illustrative estimates with local water audits, supplier quotes and privacy approval before using the report to make a real funding decision.
 
 ## Faculty signature: ______________

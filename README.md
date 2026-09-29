@@ -1,25 +1,20 @@
 # Prompt Engineering — Lab Experiments
 
-One folder per experiment. Each has a `README.md` with the aim, procedure and file map, prompt files, output placeholders and an evaluation sheet.
+One folder per experiment, with a separate course item for the scenario-based Ex-4 (T2). The assignment prompts, reports, code, outputs and evaluation notes are organised in their respective folders. Any unrun or self-scored work is labeled in its lab record.
 
-| Folder | Experiment | Ready-to-run code |
+| Folder | Experiment | Current contents |
 |---|---|---|
-| [Ex01](Ex01_GenAI_LLM_Fundamentals_Report) | Fundamentals of GenAI & LLMs — compare ChatGPT/Claude/Gemini/Perplexity | – |
-| [Ex02](Ex02_Cross_Platform_Prompting) | Cross-platform prompting: basic -> role -> context -> constraint -> format | – |
-| [Ex03](Ex03_Prompt_Types_Chatbot) | Straightforward, tabular, missing-word, preceding-question prompts (support chatbot) | – |
-| [Ex04](Ex04_Advanced_Prompting_Techniques) | Zero/few-shot, CoT, persona, reverse, graph, active prompting | – |
-| [Ex04b](Ex04b_Scenario_Based_Report) | Scenario-based report using diverse prompting techniques | – |
-| [Ex05](Ex05_Prompt_Chaining_Smart_Traffic) | Prompt chaining: Smart Traffic System | ✅ Python + tests |
-| [Ex06](Ex06_AI_Assisted_Programming_Debugging) | AI-assisted programming & debugging (Python, C, Java) | ✅ 3 languages + tests |
-| [Ex07](Ex07_Personal_Productivity_Assistant) | Personal productivity assistant | ✅ CLI + tests |
-| [Ex08](Ex08_Image_Reproduction_Prompts) | Reproducing an image with prompts | – |
-| [Ex09](Ex09_Image_Video_Prompting) | Image & video prompting techniques | – |
-| [Ex10](Ex10_Capstone_Mini_Project) | Capstone: Smart Agriculture Advisor | – |
+| [Ex01](Ex01_GenAI_LLM_Fundamentals_Report) | Fundamentals of GenAI & LLMs — compare ChatGPT and Claude | Two answer sets, report, provisional comparison |
+| [Ex02](Ex02_Cross_Platform_Prompting) | Cross-platform prompting: basic -> role -> context -> constraint -> format | Two answer sets and evaluation |
+| [Ex03](Ex03_Prompt_Types_Chatbot) | Four prompt types for a support chatbot | Two answer sets and evaluation |
+| [Ex04](Ex04_Advanced_Prompting_Techniques) | Seven advanced techniques across three engineering cases | Prompts, outputs and evaluation; active prompting is simulated |
+| [Ex04b](Ex04b_Scenario_Based_Report) | Scenario-based report using diverse prompting techniques | Prompts, model outputs, completed board report |
+| [Ex05](Ex05_Prompt_Chaining_Smart_Traffic) | Prompt chaining: Smart Traffic System | Eight steps, Python reference code; 6 tests pass |
+| [Ex06](Ex06_AI_Assisted_Programming_Debugging) | AI-assisted programming & debugging (Python, C, Java) | Code and analysis; Python's 5 tests pass; C/Java compilers unavailable here |
+| [Ex07](Ex07_Personal_Productivity_Assistant) | Personal productivity assistant | Offline CLI and prompts; 4 tests pass |
+| [Ex08](Ex08_Image_Reproduction_Prompts) | Reproducing an image with prompts | Generated sample reference and two saved iterations |
+| [Ex09](Ex09_Image_Video_Prompting) | Image & video prompting techniques | Four image outputs; video generation unavailable in this session |
+| [Ex10](Ex10_Capstone_Mini_Project) | Capstone: Smart Agriculture Advisor | Project report, prompt repository, validator, demo script and editable presentation |
 
-## How to finish an experiment
-1. Run the prompts in `prompts/` on the AI tools required.
-2. Paste raw outputs into `outputs/` (or add images/videos).
-3. Fill in `evaluation.md` / the report files.
-4. Push the folder (or copy it to the matching `RaajaThilahar/Ex.No.N` submission repo).
-
-Each folder has a `LAB_RECORD.md` (aim, procedure, result, conclusion). `RUN_SHEET.md` lists the Ex01-Ex04 prompts to paste into other AI tools.
+## Notes for submission
+Each folder has a `LAB_RECORD.md` with results and limitations. Some model comparisons use outputs already in the repository or one current-session answer set; response times and independent expert scores are not invented. Add your name and registration number to the lab records before submitting. Do not copy these materials to a separate course repository unless that is the repository your instructor assigned you.

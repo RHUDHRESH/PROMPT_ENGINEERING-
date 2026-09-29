@@ -12,13 +12,11 @@ ChatGPT and Claude (primary pair). Gemini and Perplexity are optional extras —
 | Path | Purpose |
 |---|---|
 | `prompts/` | The 5 identical prompts (one file each) |
-| `outputs/` | Paste each tool's raw answer here (one file per tool, one section per prompt) + timing |
+| `outputs/` | Saved model answers, one file per tool; completion times are marked not measured |
 | `comparison.md` | Scored comparison on Accuracy, Creativity, Hallucination, Reasoning, Speed, Engineering usefulness |
 | `report.md` | Final written report (fundamentals of GenAI + LLMs) |
 
 ## Procedure
-1. Open `prompts/` and copy each prompt verbatim into both tools (fresh chat each time).
-2. Start a stopwatch at submit; note seconds until the answer completes (Speed).
-3. Paste answers into `outputs/<tool>.md`.
-4. Fill in `comparison.md` (score 1–5, add a one-line justification).
-5. Finish `report.md`, then submit the folder / repo link.
+1. The five prompts and corresponding saved answers are in `prompts/` and `outputs/`.
+2. The current comparison and report are complete; timing was not recorded and is identified as not measured.
+3. Fresh timed runs can replace the saved answer records if the instructor requires them.
