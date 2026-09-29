@@ -13,7 +13,7 @@ One folder per experiment, with a separate course item for the scenario-based Ex
 | [Ex06](Ex06_AI_Assisted_Programming_Debugging) | AI-assisted programming & debugging (Python, C, Java) | Code and analysis; Python 5 tests pass locally; C 6 checks and Java 6 checks pass in OneCompiler online |
 | [Ex07](Ex07_Personal_Productivity_Assistant) | Personal productivity assistant | Offline CLI and prompts; 4 tests pass |
 | [Ex08](Ex08_Image_Reproduction_Prompts) | Reproducing an image with prompts | Generated sample reference and two saved iterations |
-| [Ex09](Ex09_Image_Video_Prompting) | Image & video prompting techniques | Four image outputs and one Grok video generated; further video runs gated by a paid plan, MP4 download incomplete |
+| [Ex09](Ex09_Image_Video_Prompting) | Image & video prompting techniques | Four image outputs and four video clips generated across Grok and Canva AI; Canva MP4 exports blocked by Edge, result links documented |
 | [Ex10](Ex10_Capstone_Mini_Project) | Capstone: Smart Agriculture Advisor | Project report, prompt repository, validator, demo script and editable presentation |
 
 ## Submission status
