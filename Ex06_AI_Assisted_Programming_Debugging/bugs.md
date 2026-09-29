@@ -1,9 +1,17 @@
 # Bugs found
 
-| # | Lang | Bug | Failing input | Found by (manual/AI) | Fix |
-|---|---|---|---|---|---|
-| 1 | Python | `hi = len(arr)` off-by-one | `[5]`, target 5 (index error risk with inclusive logic) | | `hi = len(arr) - 1` |
-| 2 | Python | `lo < hi` skips last candidate | `[5]`, target 5 -> -1 | | `lo <= hi` |
-| 3 | Python/C | `lo = mid` infinite loop | `[1,3]`, target 3 | | `lo = mid + 1` |
-| 4 | C/Java | `(lo+hi)/2` overflow | n near INT_MAX | | `lo + (hi-lo)/2` |
-| 5 | Java | `lo < hi` misses element | `{5}`, target 5 | | `lo <= hi` |
+All buggy files were **executed** (python3, gcc, javac/java; hang checks under `timeout`). "Found by" is stated honestly: the bugs are annotated in the source comments (they were planted), so what was verified here is which ones actually manifest and on which inputs. Verification was done by AI (Claude) running the code; no manual/human debugging session was recorded.
+
+Environment: python3, gcc, javac/java as installed in this sandbox. Exhaustive check in Python: all sorted arrays `[1,3,..,2n-1]`, n = 0..5, every target 0..2n (34 cases).
+
+| # | Lang | Bug | Manifests? | Observed failing input | Found by | Fix |
+|---|---|---|---|---|---|---|
+| 1 | Python | `hi = len(arr)` (should be `len(arr)-1`) | Only in combination. Alone it raises `IndexError` (tested in isolation, e.g. `[]`, target 0). In the buggy file it is masked by bug 2 (`lo < hi` keeps `mid < len`), so **no IndexError was ever seen** in the shipped buggy code | none on its own in the shipped file | AI, by running an isolated variant; the claim in the earlier table ("`[5]`, 5") was wrong | `hi = len(arr) - 1` |
+| 2 | Python | `lo < hi` skips the last candidate | Yes, wrong result: `[1,3]` target 1 gives -1 (expected 0), `[1,3,5]` target 1 gives -1. **`[5]` target 5 actually returns 0 (correct)**, because bug 1 masks bug 2 there. In isolation (`hi=len-1`), `[5]` target 5 gives -1 | `[1,3]`, 1 | AI, by running the code | `lo <= hi` |
+| 3 | Python | `lo = mid` never advances | Yes, **hangs** (killed by timeout, 11 of 34 exhaustive cases): `[1]` target 2, `[1,3]` target 4, `[1,3,5,7,9]` target 4 (exit 124 under `timeout 3`). Note `[1,3]` target 3 does NOT hang (returns 1) | `[1]`, 2 | AI, by running with timeout | `lo = mid + 1` |
+| 4 | C | `lo = mid` infinite loop | Yes, **hangs** with `n=5, a={1,3,5,7,9}` for targets 4, 9, 10 (exit 124). Targets 1, 5, 0 return correctly. The provided `test_binary_search.c` also hangs against the buggy file (exit 124) but passes against `binary_search_fixed.c` | `{1,3,5,7,9}`, 9 | AI, by running with timeout | `lo = mid + 1` |
+| 5 | C | `(lo+hi)/2` signed overflow | **Not reproduced end-to-end**: it needs an array of about 2^31 elements. Only the arithmetic was demonstrated: with `lo=INT_MAX-1, hi=INT_MAX` gcc `-fsanitize=signed-integer-overflow` reports "signed integer overflow" and mid = -1, versus correct 2147483646 with `lo+(hi-lo)/2`. Latent bug | arithmetic only | AI, by running a small overflow demo | `lo + (hi-lo)/2` |
+| 6 | Java | `lo < hi` misses the last candidate | Yes, wrong result: `[5]` target 5 gives -1; `[1,3]` target 3 gives -1; `[1,3,5,7,9]` targets 3 and 9 give -1 | `{5}`, 5 | AI, by running a driver | `lo <= hi` |
+| 7 | Java | `(lo+hi)/2` int overflow | Arithmetic demonstrated: `(MAX_VALUE-1 + MAX_VALUE)/2` prints -1 (correct 2147483646). Not reproduced with a real array (would need about 2^31 elements) | arithmetic only | AI, by running a small demo | `lo + (hi-lo)/2` |
+
+Fixed versions: `python/test_binary_search.py` (5 tests OK), `c/test_binary_search.c` against `binary_search_fixed.c` ("All C tests passed"), `java/BinarySearchTest` ("All Java tests passed") all pass. Note the provided tests do not include a "target greater than all elements" case, so the hang in the buggy code is not caught by tests that only pass on the fixed version: it was found by the timeout runs above (`test_binary_search.c` did hang against the buggy C).

@@ -1,0 +1,43 @@
+REAL RUN of the offline CLI (src/assistant.py main()), driven by scripted input; the prompt and typed line are echoed by a thin wrapper around input().
+Tip categories and text are chosen randomly by the CLI, so a re-run will differ. Run date: 2026-09-29. Fresh memory.json at start.
+
+Pace assistant. Commands: add, list, summary, schedule, free, tip, like, dislike, quit
+> add Remind me to call mom at 6 PM
+Added: {'title': 'call mom', 'time': '18:00', 'priority': 'medium', 'done': False}
+> add urgent: submit report by 09:30
+Added: {'title': 'urgent: submit report', 'time': '09:30', 'priority': 'high', 'done': False}
+> add someday read a book
+Added: {'title': 'someday read a book', 'time': None, 'priority': 'low', 'done': False}
+> add buy groceries
+Added: {'title': 'buy groceries', 'time': None, 'priority': 'medium', 'done': False}
+> list
+You have 4 pending task(s):
+- [high] urgent: submit report @ 09:30
+- [medium] call mom @ 18:00
+- [medium] buy groceries
+- [low] someday read a book
+> schedule Standup 10:00 30
+Scheduled Standup 10:00-10:30.
+> schedule Design review 10:15 45
+Scheduled, but overlaps with: Standup
+> schedule Lunch 12:30 60
+Scheduled Lunch 12:30-13:30.
+> free
+Free: 09:00-10:00, 11:00-12:30, 13:30-18:00
+> like
+Ask for a tip first.
+> tip
+[hydration] Keep a bottle at your desk and refill it twice today.
+> like
+Noted. I'll show more hydration tips.
+> tip
+[exercise] Take a 10-minute walk.
+> dislike
+Noted. I'll show fewer exercise tips.
+> summary
+You have 4 pending task(s):
+- [high] urgent: submit report @ 09:30
+- [medium] call mom @ 18:00
+- [medium] buy groceries
+- [low] someday read a book
+> quit
